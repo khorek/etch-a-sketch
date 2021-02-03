@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css?family=Audiowide&display=swap');
+
+@font-face {
+    font-family: Audiowide;
+    src: url(../fonts/Audiowide/Audiowide-Regular.ttf);
+    font-weight: 400;
+}
+
+:root {
+    --content-width: 400px;
+}
+
+body {
+    background: -webkit-linear-gradient(45deg, #292929 25%, transparent 25%, transparent 75%, #292929 75%), -webkit-linear-gradient(45deg, #292929 25%, transparent 25%, transparent 75%, #292929 75%) 0.1875em 0.1875em, -webkit-radial-gradient(at 50% 0, #484847, #090909);
+    background: linear-gradient(45deg, #292929 25%, transparent 25%, transparent 75%, #292929 75%), linear-gradient(45deg, #292929 25%, transparent 25%, transparent 75%, #292929 75%) 0.1875em 0.1875em, radial-gradient(at 50% 0, #484847, #090909);
+    background-size: 0.375em 0.375em, 0.375em 0.375em, 100% 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+a {
+    color: black;
+}
+
+.mouse-o-sketch {
+    font-family: Audiowide, cursive;
+    font-size: 2.5em;
+    text-align: center;
+    margin: 30px;
+    color: red;
+}
+
+/* Pixel Container */
+.container {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: white;
+}
+
+.container-wrapper {
+    height: 75vw;
+    width: 75vw;
+    max-height: var(--content-width);
+    ;
+    max-width: var(--content-width);
+    margin: 30px auto;
+    position: relative;
+}
+
+.container-wrapper:before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    bottom: -15px;
+    right: -15px;
+    left: -15px;
+    background-color: #ffffff;
+    z-index: -1;
+}
+
+.container-wrapper::after {
+    content: '';
+    position: absolute;
+    top: -15px;
+    bottom: -15px;
+    right: -15px;
+    left: -15px;
+    background-color: #ffffff;
+    z-index: -2;
+}
+
+.container-wrapper::before,
+.container-wrapper::after {
+    background: linear-gradient(45deg, #aaaaaa 0 50%, #75757b 50% 100%);
+}
+
+/* Pixel or divs */
+.container>* {
+    height: 100%;
+    background-color: #ffffff;
+    transition: all 0.5s;
+}
+
+/* Buttons & Button Wrapper */
+button {
+    font-family: Audiowide, cursive;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin: 5px;
+    color: red;
+    line-height: 27px;
+    background-color: black;
+    border: 1px solid red;
+}
+
+button:focus,
+input:focus {
+    outline: none;
+    box-shadow: 0 1px 10px 0 rgba(240, 240, 240, 1);
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: calc(75vw + 40px);
+    max-width: calc(var(--content-width) + 40px);
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.btn-color {
+    display: flex;
+    justify-content: space-between;
+}
+
+.color-choice {
+    width: 100%;
+    margin: 0 15px 15px 0;
+}
+
+.color-choice:last-child {
+    margin: 0 0px 15px 0;
+}
+
+.buttons>* {
+    flex: 1 1 auto;
+}
+
+#input-color {
+    border: none;
+    height: 25px;
+    width: 25px;
+    padding: 0;
+}
+
+input[type="color"i] {
+    background-color: black;
+}
+
+/* Options Under Pixel Container */
+.grid-options {
+    width: calc(75vw + 40px);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    align-items: center;
+    max-width: calc(var(--content-width) + 40px);
+}
+
+.grid-options>* {
+    flex: 1 1 auto;
+}
+
+/* Pixel Size Slider */
+.size-container {
+    width: 55vw;
+    padding-left: 10px;
+    margin-right: 5px;
+}
+
+.size-container p {
+    color: white;
+    font-size: 18px;
+    font-family: Audiowide, cursive;
+    text-align: center;
+    margin: 7px 0;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    background: red;
+    outline: none;
+    transform: rotate(180deg);
+    transition: 0.2s;
+    border-radius: 7px;
+}
+
+/* Chrome */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Firefox */
+slider::-moz-range-thumb {
+    width: 15px;
+    height: 30px;
+    background: white;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 1500px) {
+    :root {
+        --content-width: 500px;
+    }
+}
